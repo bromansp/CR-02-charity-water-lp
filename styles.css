@@ -1,19 +1,192 @@
-/* charity: water Brand Colors & Fonts
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
+/* Font and Backgrounds */
+body {
+  font-family: 'Arial', sans-serif;
+  color: #f1f1f1;
+  position: relative;
+  overflow-x: hidden;
+}
 
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
+/* Header styles */
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
 
-Fonts:
-- Proxima Nova
-- Avenir
+/* Logo styles */
+.logo {
+  display: flex;
+  align-items: center;
+}
 
-*/
+.logo img {
+  height: 48px;
+  margin-right: 14px;
+}
+
+.logo span {
+  font-weight: bold;
+  font-size: 2em;
+  color: #ffe8b6;
+}
+
+/* Learn More button styles */
+.learn-more {
+  background-color: #77a8bb;
+  color: #f1f1f1;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.learn-more:hover {
+  background-color: #60b2d7;
+}
+
+/* Hero section styles */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 200px;
+}
+
+/* Background image styles */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Overlay for readability */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  z-index: 2;
+}
+
+/* Content area on top of the background and overlay */
+.content {
+  position: relative;
+  z-index: 3;
+  max-width: 700px;
+}
+
+/* Main headline (subheader) style */
+.content h1 {
+  font-size: 4em;
+  margin-bottom: 32px;
+  font-weight: bold;
+  color: #ffe8b6;
+}
+
+/* Body text style */
+.content p {
+  font-size: 1em;
+  margin-bottom: 30px;
+  color: #ffe8b6;
+  max-width: 400px;
+}
+
+/* Donation form styles */
+.donation-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.donation-form input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  width: 250px;
+  font-size: 1em;
+}
+
+.donation-form button {
+  padding: 12px 20px;
+  border: none;
+  background-color: #77a8bb;
+  color: white;
+  font-weight: bold;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-size: 1em; /* Make Donate button text larger */
+}
+
+.donation-form button:hover {
+  background-color: #60b2d7;
+}
+
+/* ----------- Responsive Styles for Beginners ----------- */
+@media (max-width: 900px) {
+  .hero {
+    padding-left: 40px; /* Less padding on smaller screens */
+  }
+  .content {
+    max-width: 90vw; /* Let content fill more of the screen */
+  }
+  .content h1 {
+    font-size: 2.5em; /* Smaller headline */
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 10px;
+  }
+  .logo img {
+    height: 36px;
+  }
+  .logo span {
+    font-size: 1.3em;
+  }
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+    height: auto;
+    min-height: 100vh;
+  }
+  .content {
+    max-width: 98vw;
+    padding-top: 80px;
+  }
+  .content h1 {
+    font-size: 1.5em;
+  }
+  .donation-form input {
+    width: 120px;
+    font-size: 0.9em;
+  }
+  .donation-form button {
+    font-size: 1em;
+    padding: 10px 12px;
+  }
+}
